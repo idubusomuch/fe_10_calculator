@@ -1,0 +1,141 @@
+@charset "utf-8";
+
+/* 모든 요소의 기본 여백 제거 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* HTML과 Body의 기본 설정 */
+html,
+body {
+  height: 100%;
+}
+
+button {
+  cursor: pointer;
+}
+
+#container {
+  background-color: #eee;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.calculator-container {
+  width: 450px;
+  height: 600px;
+  padding: 15px;
+  background-color: #333;
+  border-radius: 20px;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 3px 6px #00000029, 0 3px 6px #0000003b;
+}
+
+/* flex, grid */
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.grid {
+  display: grid;
+}
+
+/* 상단 바 버튼 */
+.top-bar {
+  width: 100%;
+  padding: 10px;
+  justify-content: flex-start;
+}
+
+.top-bar-btn {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+.red {
+  background-color: #ec6a5f;
+}
+
+.yellow {
+  background-color: #f4bf4f;
+}
+
+.green {
+  background-color: #61c554;
+}
+
+/* input */
+.num-input {
+  width: 100%;
+  height: 17%;
+  padding: 20px;
+  text-align: right;
+  font-size: 3em;
+  color: #fff;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.num-input::-webkit-scrollbar {
+  display: none;
+}
+
+/* btn-box grid */
+.calculate-btn-box {
+  border-radius: 20px;
+  width: 100%;
+  flex-grow: 1;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.calculate-btn-box > button {
+  border-radius: 10px;
+  margin: 7px;
+  font-size: 1.5em;
+  box-shadow: 1px 6px 0 rgb(0, 0, 0, 0.6);
+  border: none;
+}
+
+.zero {
+  grid-column: 1 / span 2;
+}
+
+button.operator,
+button.function {
+  background-color: #666;
+  color: white;
+}
+
+/* 버튼 hover, active 시 */
+button.operator:hover,
+button.function:hover {
+  background-color: #444;
+}
+
+button.number:hover {
+  background-color: #bbb;
+}
+
+button.operator:active,
+button.function:active {
+  position: relative;
+  top: 5px;
+  box-shadow: 1px 0px 0 rgb(0, 0, 0, 0.6);
+  background-color: #444;
+}
+
+button.number:active {
+  position: relative;
+  top: 5px;
+  box-shadow: 1px 0px 0 rgb(0, 0, 0, 0.6);
+  background-color: #ccc;
+}
